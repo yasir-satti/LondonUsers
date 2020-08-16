@@ -35,10 +35,12 @@ def home():
 
     users_50_miles_result =[] # store result for users within 50 miles from London
 
+    # Get number of users
+    users_num = len(data_user.json())
+
     # Loop through users data and return indecies of those within 50 miles from London
     count = 0
-    
-    while count < 1000: # there are 999 users
+    while count < users_num: 
         # get user coordinates
         user_latitude = str(data_user.json()[count]['latitude'])
         user_longitude = str(data_user.json()[count]['longitude'])
